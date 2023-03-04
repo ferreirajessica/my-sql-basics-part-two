@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS SpotiFyClone;
+DROP DATABASE IF EXISTS SpotifyClone;
 
 CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE artist (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   name VARCHAR(50) NOT NULL
-);
+) engine = InnoDB;
 
 CREATE TABLE album (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL, 
@@ -15,7 +15,7 @@ CREATE TABLE album (
   artist_id INT,
   release_year YEAR NOT NULL,
   FOREIGN KEY (artist_id) REFERENCES artist (id)
-);
+) engine = InnoDB;
 
 CREATE TABLE song (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -23,13 +23,13 @@ CREATE TABLE song (
   artist_id INT,
   album_id INT, 
   length INT NOT NULL
-);
+) engine = InnoDB;
 
 CREATE TABLE subscription (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   type VARCHAR(50) NOT NULL,
   value DOUBLE NOT NULL
-);
+) engine = InnoDB;
 
 CREATE TABLE user (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -39,14 +39,14 @@ CREATE TABLE user (
   subscription_id INT,
   signed_up DATE,
   FOREIGN KEY (subscription_id) REFERENCES subscription (id)
-);
+) engine = InnoDB;
 
 CREATE TABLE following (
    user_id INT,
    artist_id INT,
    FOREIGN KEY (user_id) REFERENCES user (id),
    FOREIGN KEY (artist_id) REFERENCES artist (id)
-);
+) engine = InnoDB;
 
 CREATE TABLE history (
     user_id INT,
@@ -54,7 +54,7 @@ CREATE TABLE history (
     last_played DATETIME,
     FOREIGN KEY (user_id) REFERENCES user (id),
     FOREIGN KEY (song_id) REFERENCES song (id)
-);
+) engine = InnoDB;
 
 INSERT INTO artist (name)
 VALUES 
