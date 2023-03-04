@@ -44,6 +44,7 @@ CREATE TABLE user (
 CREATE TABLE following (
    user_id INT,
    artist_id INT,
+   CONSTRAINT PRIMARY KEY (user_id, artist_id),
    FOREIGN KEY (user_id) REFERENCES user (id),
    FOREIGN KEY (artist_id) REFERENCES artist (id)
 ) engine = InnoDB;
@@ -52,6 +53,7 @@ CREATE TABLE history (
     user_id INT,
     song_id INT,
     last_played DATETIME,
+    CONSTRAINT PRIMARY KEY (user_id, song_id),
     FOREIGN KEY (user_id) REFERENCES user (id),
     FOREIGN KEY (song_id) REFERENCES song (id)
 ) engine = InnoDB;
