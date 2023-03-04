@@ -22,7 +22,9 @@ CREATE TABLE song (
   title VARCHAR(50) NOT NULL,
   artist_id INT,
   album_id INT, 
-  length INT NOT NULL
+  length INT NOT NULL,
+  FOREIGN KEY(artist_id) REFERENCES artist (id),
+  FOREIGN KEY (album_id) REFERENCES album (id)
 ) engine = InnoDB;
 
 CREATE TABLE subscription (
