@@ -74,7 +74,7 @@ VALUES
      ('hot space', 2, 1982),
      ('falso brilhante', 3, 1998),
      ('vento de maio', 3, 2001),
-     ('qvvjfa', 4, 2003),
+     ('qvvjfa?', 4, 2003),
      ('somewhere far beyond', 5, 2007),
      ('i put a spell on you', 6, 2012);
    
@@ -128,7 +128,6 @@ VALUES
   (6, 6),
   (6, 1),
   (7, 6),
-  (8, NULL),
   (9, 3),
   (10, 2);
   
