@@ -62,59 +62,59 @@ CREATE TABLE history (
 
 INSERT INTO artist (name)
 VALUES 
-    ('beyonce'),
-    ('queen'),
-    ('elis regina'),
-    ('baco exu do blues'),
-    ('blind guardian'),
-    ('nina simone');
+    ('Beyonce'),
+    ('Queen'),
+    ('Elis Regina'),
+    ('Baco Exu do Blues'),
+    ('Blind Guardian'),
+    ('Nina Simone');
   
  INSERT INTO album (name, artist_id, release_year)
  VALUES
-     ('renaissance',  1,  2022),
-     ('jazz',  2, 1978 ),
-     ('hot space', 2, 1982),
-     ('falso brilhante', 3, 1998),
-     ('vento de maio', 3, 2001),
-     ('qvvjfa?', 4, 2003),
-     ('somewhere far beyond', 5, 2007),
-     ('i put a spell on you', 6, 2012);
+     ('Renaissance',  1,  2022),
+     ('Jazz',  2, 1978 ),
+     ('Hot Space', 2, 1982),
+     ('Falso Brilhante', 3, 1998),
+     ('Vento de Maio', 3, 2001),
+     ('QVVJFA?', 4, 2003),
+     ('Somewhere Far Beyond', 5, 2007),
+     ('I Put a Spell On You', 6, 2012);
    
    INSERT INTO song (title, artist_id, album_id, length)
    VALUES 
-     ('break my soul', 1, 1, 279),
-     ('virgo\'s groove', 1, 1, 369),
-     ('alien superstar', 1, 1, 116),
-     ('don\'t stop me now', 2, 2, 203),
-     ('under pressure', 2, 3, 152),
-     ('como nossos pais', 3, 4, 105),
-     ('o medo de amar é o medo de ser livre', 3, 5, 207),
-     ('samba em paris', 4, 6, 267),
-     ('the bards song', 5, 7, 244),
-     ('feeling good', 6, 8, 100);
+     ('Break My Soul', 1, 1, 279),
+     ('Virgo\'s Groove', 1, 1, 369),
+     ('Alien Superstar', 1, 1, 116),
+     ('Don\'t Stop Me Now', 2, 2, 203),
+     ('Under Pressure', 2, 3, 152),
+     ('Como Nossos Pais', 3, 4, 105),
+     ('O Medo de Amar é o Medo de Ser Livre', 3, 5, 207),
+     ('Samba em Paris', 4, 6, 267),
+     ('The Bards Song', 5, 7, 244),
+     ('Feeling Good', 6, 8, 100);
    
    INSERT INTO subscription (type, value)
    VALUES
-     ('gratuito', 0.00),
-     ('pessoal', 6.99),
-     ('universitario', 5.99),
-     ('familiar', 7.99);
+     ('Gratuito', 0.00),
+     ('Pessoal', 6.99),
+     ('Universitario', 5.99),
+     ('Familiar', 7.99);
      
 
 
      
 INSERT INTO user (first_name, last_name, age, subscription_id, signed_up)
 VALUES 
-  ('barbara', 'liskov', 82, 1, '2019-10-20'),
-  ('robert', 'cecil martin', 58, 1, '2017-01-06'),
-  ('ada', 'lovelace', 37, 4,  '2017-12-30'),
-  ('martin', 'fowler', 46, 4, '2017-01-17'),
-  ('sandi', 'metz', 58, 4, '2018-04-29'),
-  ('paulo', 'freire', 19, 3, '2018-02-14'),
-  ('bell', 'hooks', 26, 3, '2018-01-05'),
-  ('christopher', 'alexander', 85, 2, '2019-06-05'),
-  ('judith', 'butler', 45, 2, '2020-05-13'),
-  ('jorge', 'amado', 58, 2, '2017-02-17');
+  ('Barbara', 'Liskov', 82, 1, '2019-10-20'),
+  ('Robert', 'Cecil Martin', 58, 1, '2017-01-06'),
+  ('Ada', 'Lovelace', 37, 4,  '2017-12-30'),
+  ('Martin', 'Fowler', 46, 4, '2017-01-17'),
+  ('Sandi', 'Metz', 58, 4, '2018-04-29'),
+  ('Paulo', 'Freire', 19, 3, '2018-02-14'),
+  ('Bell', 'Hooks', 26, 3, '2018-01-05'),
+  ('Christopher', 'Alexander', 85, 2, '2019-06-05'),
+  ('Judith', 'Butler', 45, 2, '2020-05-13'),
+  ('Jorge', 'Amado', 58, 2, '2017-02-17');
   
   INSERT INTO following (user_id, artist_id)
   VALUES
