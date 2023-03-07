@@ -14,7 +14,7 @@ CREATE TABLE albums (
   name VARCHAR(50) NOT NULL,
   artist_id INT,
   release_year YEAR NOT NULL,
-  FOREIGN KEY (artist_id) REFERENCES artist (id)
+  FOREIGN KEY (artist_id) REFERENCES artists (id)
 ) engine = InnoDB;
 
 CREATE TABLE songs (
@@ -23,8 +23,8 @@ CREATE TABLE songs (
   artist_id INT,
   album_id INT, 
   length INT NOT NULL,
-  FOREIGN KEY(artist_id) REFERENCES artist (id),
-  FOREIGN KEY (album_id) REFERENCES album (id)
+  FOREIGN KEY(artist_id) REFERENCES artists (id),
+  FOREIGN KEY (album_id) REFERENCES albums (id)
 ) engine = InnoDB;
 
 CREATE TABLE subscriptions (
@@ -40,15 +40,15 @@ CREATE TABLE users (
   age VARCHAR(3) NOT NULL,
   subscription_id INT,
   signed_up DATE,
-  FOREIGN KEY (subscription_id) REFERENCES subscription (id)
+  FOREIGN KEY (subscription_id) REFERENCES subscriptions (id)
 ) engine = InnoDB;
 
 CREATE TABLE following (
    user_id INT,
    artist_id INT,
    CONSTRAINT PRIMARY KEY (user_id, artist_id),
-   FOREIGN KEY (user_id) REFERENCES user (id),
-   FOREIGN KEY (artist_id) REFERENCES artist (id)
+   FOREIGN KEY (user_id) REFERENCES users (id),
+   FOREIGN KEY (artist_id) REFERENCES artists (id)
 ) engine = InnoDB;
 
 CREATE TABLE history (
@@ -56,8 +56,8 @@ CREATE TABLE history (
     song_id INT,
     last_played DATETIME,
     CONSTRAINT PRIMARY KEY (user_id, song_id),
-    FOREIGN KEY (user_id) REFERENCES user (id),
-    FOREIGN KEY (song_id) REFERENCES song (id)
+    FOREIGN KEY (user_id) REFERENCES users (id),
+    FOREIGN KEY (song_id) REFERENCES songs (id)
 ) engine = InnoDB;
 
 INSERT INTO artists (name)
