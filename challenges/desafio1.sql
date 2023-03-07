@@ -18,28 +18,31 @@ CREATE TABLE albums (
 ) engine = InnoDB;
 
 CREATE TABLE songs (
-  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  id INT AUTO_INCREMENT NOT NULL,
   title VARCHAR(50) NOT NULL,
   artist_id INT,
   album_id INT, 
   length INT NOT NULL,
+  PRIMARY KEY (id)
   FOREIGN KEY(artist_id) REFERENCES artists (id),
   FOREIGN KEY (album_id) REFERENCES albums (id)
 ) engine = InnoDB;
 
 CREATE TABLE subscriptions (
-  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  id INT AUTO_INCREMENT NOT NULL,
   type VARCHAR(50) NOT NULL,
   value DOUBLE NOT NULL
+  PRIMARY KEY (id)
 ) engine = InnoDB;
 
 CREATE TABLE users (
-  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  id INT AUTO_INCREMENT NOT NULL,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   age VARCHAR(3) NOT NULL,
   subscription_id INT,
   signed_up DATE,
+  PRIMARY KEY (id)
   FOREIGN KEY (subscription_id) REFERENCES subscriptions (id)
 ) engine = InnoDB;
 
