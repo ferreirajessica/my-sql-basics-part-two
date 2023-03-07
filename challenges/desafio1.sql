@@ -4,12 +4,12 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 USE SpotifyClone;
 
-CREATE TABLE artist (
+CREATE TABLE artists (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   name VARCHAR(50) NOT NULL
 ) engine = InnoDB;
 
-CREATE TABLE album (
+CREATE TABLE albums (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL, 
   name VARCHAR(50) NOT NULL,
   artist_id INT,
@@ -17,7 +17,7 @@ CREATE TABLE album (
   FOREIGN KEY (artist_id) REFERENCES artist (id)
 ) engine = InnoDB;
 
-CREATE TABLE song (
+CREATE TABLE songs (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   title VARCHAR(50) NOT NULL,
   artist_id INT,
@@ -27,13 +27,13 @@ CREATE TABLE song (
   FOREIGN KEY (album_id) REFERENCES album (id)
 ) engine = InnoDB;
 
-CREATE TABLE subscription (
+CREATE TABLE subscriptions (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   type VARCHAR(50) NOT NULL,
   value DOUBLE NOT NULL
 ) engine = InnoDB;
 
-CREATE TABLE user (
+CREATE TABLE users (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE history (
     FOREIGN KEY (song_id) REFERENCES song (id)
 ) engine = InnoDB;
 
-INSERT INTO artist (name)
+INSERT INTO artists (name)
 VALUES 
     ('Beyonce'),
     ('Queen'),
@@ -69,7 +69,7 @@ VALUES
     ('Blind Guardian'),
     ('Nina Simone');
   
- INSERT INTO album (name, artist_id, release_year)
+ INSERT INTO albums (name, artist_id, release_year)
  VALUES
      ('Renaissance',  1,  2022),
      ('Jazz',  2, 1978 ),
@@ -80,7 +80,7 @@ VALUES
      ('Somewhere Far Beyond', 5, 2007),
      ('I Put a Spell On You', 6, 2012);
    
-   INSERT INTO song (title, artist_id, album_id, length)
+   INSERT INTO songs (title, artist_id, album_id, length)
    VALUES 
      ('Break My Soul', 1, 1, 279),
      ('Virgo\'s Groove', 1, 1, 369),
@@ -93,7 +93,7 @@ VALUES
      ('The Bards Song', 5, 7, 244),
      ('Feeling Good', 6, 8, 100);
    
-   INSERT INTO subscription (type, value)
+   INSERT INTO subscriptions (type, value)
    VALUES
      ('Gratuito', 0.00),
      ('Pessoal', 6.99),
@@ -103,7 +103,7 @@ VALUES
 
 
      
-INSERT INTO user (first_name, last_name, age, subscription_id, signed_up)
+INSERT INTO users (first_name, last_name, age, subscription_id, signed_up)
 VALUES 
   ('Barbara', 'Liskov', 82, 1, '2019-10-20'),
   ('Robert', 'Cecil Martin', 58, 1, '2017-01-06'),
