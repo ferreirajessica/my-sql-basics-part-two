@@ -65,7 +65,7 @@ CREATE TABLE history (
 
 INSERT INTO artists (name)
 VALUES 
-    ('Beyonce'),
+    ('Beyoncé'),
     ('Queen'),
     ('Elis Regina'),
     ('Baco Exu do Blues'),
@@ -81,7 +81,7 @@ VALUES
      ('Vento de Maio', 3, 2001),
      ('QVVJFA?', 4, 2003),
      ('Somewhere Far Beyond', 5, 2007),
-     ('I Put a Spell On You', 6, 2012);
+     ('I Put A Spell On You', 6, 2012);
    
    INSERT INTO songs (title, artist_id, album_id, length)
    VALUES 
